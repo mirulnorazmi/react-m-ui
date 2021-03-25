@@ -1,18 +1,31 @@
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
 import './App.css';
-import AppBar from './components/AppBar';
-
+import Nav from './components/Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Grid from '@material-ui/core/Grid';
+
+const Home = React.lazy(() => import('./components/pages/Home'));
 
 function App() {
   return (
     <>
-    <Router>
-      <AppBar />
+    
+      <Grid container direction="column">
+      <Router>
+        <Grid item>
+          <Nav />
+        </Grid>
+        <Grid item container>
+        <Grid item xs={2}/>
         <Switch>
-          <Route path='/' exact /*component={Home}*/ />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Route path='/home' exact component={Home} />
+          </Suspense>
         </Switch>
+        <Grid item xs={2}/>
+        </Grid>
       </Router>
+      </Grid>
     </>
   );
 }
