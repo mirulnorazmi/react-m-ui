@@ -9,10 +9,9 @@ const Home = React.lazy(() => import('./components/pages/Home'));
 function App() {
   return (
     <>
-    
       <Grid container direction="column">
       <Router>
-        <Grid item>
+        <Grid item xs={12}>
           <Nav />
         </Grid>
         <Grid item container>

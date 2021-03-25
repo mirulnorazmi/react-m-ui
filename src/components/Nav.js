@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  img2 :{
+      width : "120px",
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -34,18 +37,8 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-           <img className="photo" src={logo} alt="logo" />
+           <img className={classes.img2} src={logo} alt="logo" />
           </Typography>
-
-          <Link to='/home' className='nav-links'>
-            <Button color="inherit">Home</Button>
-          </Link>
-          <Link to='/about' className='nav-links'>
-          <Button color="inherit">About</Button>
-          </Link>
-          <Link to='/contactUs' className='nav-links'>
-            <Button color="inherit">Contact Us</Button>
-          </Link>
         </Toolbar>
       </AppBar>
     </div>

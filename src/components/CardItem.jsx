@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles({
     root: {
       minWidth: 275,
+      alignItems: "center",
     },
     bullet: {
       display: 'inline-block',
